@@ -1,58 +1,120 @@
-/* Général */
+/* ===== Général ===== */
 body {
-    background: linear-gradient(135deg, #f7d794, #f0a500);
-    background: url('/images/foutousauce.jpg');
-    background-size: cover;        /* L’image couvre toute la surface */
-    background-position: center;   /* Centrée */
-    background-repeat: no-repeat;  /* Pas de répétition */
-    background-attachment: fixed;  /* Reste fixe lors du scroll */
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #4b3b2b;
+    background: url('/images/foutousauce.jpg') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4b3b2b;
 }
 
-/* Conteneur principal */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
+
+header {
+    background-color: #fff;
     padding: 20px;
-    background-color: rgba(255, 248, 230, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(240, 165, 0, 0.3);
+    text-align: center;
+    border-bottom: 2px solid #eee;
 }
 
-/* Titre */
-.title {
+header h1 {
+    margin: 0;
     font-size: 2.5rem;
+    color: #d35400;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e67e22;
+    color: white;
+    border-radius: 8px;
+}
+
+nav span {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    font-style: italic;
+}
+
+/* ===== Conteneur principal ===== */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: rgba(255, 248, 230, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(240, 165, 0, 0.3);
+}
+
+/* ===== Titre ===== */
+.title {
+    font-size: 2.3rem;
     margin-bottom: 30px;
     text-align: center;
-    color: #a65a00;
-    text-shadow: 1px 1px 3px rgba(165, 90, 0, 0.6);
+    color: #d35400;
+    text-shadow: 1px 1px 3px rgba(165, 90, 0, 0.5);
 }
 
-/* Boutons */
-.btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(165, 90, 0, 0.4);
+/* ===== Cartes de commande ===== */
+.card {
+    background-color: #fffdf9;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-left: 8px solid #f0a500;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #e67e22;
+}
+
+.card p {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.card ul li {
+    margin-bottom: 6px;
+    list-style: disc;
     font-size: 1rem;
 }
 
-.btn-primary {
-    background-color: #f0a500;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #d48806;
+/* ===== Boutons ===== */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(165, 90, 0, 0.3);
 }
 
 .btn-success {
@@ -62,5 +124,91 @@ body {
 
 .btn-success:hover {
     background-color: #4a7c2e;
+    transform: scale(1.05);
+}
+/* ===== Suivi de commande spécifique ===== */
+
+.commande-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 245, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(240, 165, 0, 0.2);
+}
+
+.commande-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #a65a00;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(165, 90, 0, 0.3);
+}
+
+.commande-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fffdf9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 6px solid #f0a500;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.commande-item:hover {
+    transform: scale(1.01);
+}
+
+.plat-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #e67e22;
+}
+
+.plat-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.plat-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4b3b2b;
+}
+
+/* ===== Total commande ===== */
+.total-commande {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #a65a00;
+    border-top: 2px solid #f0a500;
+    padding-top: 15px;
+}
+
+/* ===== Bouton confirmer commande ===== */
+.confirmer-btn {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #6ab04c;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmer-btn:hover {
+    background-color: #4a7c2e;
+    transform: scale(1.05);
 }
 

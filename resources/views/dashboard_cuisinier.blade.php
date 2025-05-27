@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord du cuisinier</title>
-    <link rel="stylesheet" href="{{ asset('css/dashboard_cuisinier.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/serveur.css') }}">
 </head>
 <body>
      <header>

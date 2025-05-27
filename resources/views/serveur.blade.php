@@ -40,7 +40,7 @@
 
                     <ul>
                         @foreach($commande->plats as $plat)
-                            <li>{{ $plat->nom }} (x{{ $plat->pivot->quantite }})</li>
+                            <li>{{ $plat->name }} (x{{ $plat->pivot->quantite }})</li>
                         @endforeach
                     </ul>
 
