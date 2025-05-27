@@ -12,10 +12,10 @@ use App\Http\Controllers\CuisinierController;
 use App\Http\Controllers\MenuController;
 
 
-Route::get('/inscription', [InscriptionController:: class, 'index']);
+Route::get('/inscription', [InscriptionController:: class, 'index'])->name('inscriptionShow');
 Route::post('/inscription', [InscriptionController:: class, 'create'])->name('inscription-B');
 Route::post('/', [InscriptionController:: class, 'login'])->name('connexion-B');
-Route::get('/', [InscriptionController:: class, 'index_2']);
+Route::get('/', [InscriptionController:: class, 'index_2'])->name('connexionShow');
 
 
 Route::get('/accueil', [AccueilController:: class, 'index'])->name('accueilShow');

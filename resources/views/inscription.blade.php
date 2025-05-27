@@ -31,6 +31,8 @@
                 <input type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
 
+            <p>Vous avez déjà un compte? <a href="{{ route('connexionShow') }}">Connectez-vous</a></p>
+
             <button type="submit">S'inscrire</button>
         </form>
     </div>
