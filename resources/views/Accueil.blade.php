@@ -8,47 +8,60 @@
 </head>
 <body>
   <header>
-    <h1>Le Délicieux</h1>
+    <h1>NOL'K</h1>
     <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Menu</a>
-      <a href="#">Réservations</a>
+      <a href="{{ route('accueilShow') }}">Accueil</a>
+      <a href="{{ route('menu') }}">Menu</a> 
+      <a href="{{ route('commande-suivi') }}">Commande</a>
       <a href="#">Contact</a>
+      @if (Auth::user()->role === 'admin')
+          <a href="{{ route('admin-dashboard') }}">Admin</a>
+      @endif
+      @if (Auth::user()->role === 'serveur' || Auth::user()->role === 'admin')
+        <a href="{{ route('serveur-dashboard') }}">Serveur</a>
+      @endif
+      @if (Auth::user()->role === 'cuisinier' || Auth::user()->role === 'admin')
+        <a href="{{ route('cuisinier-dashboard') }}">Cuisinier</a>
+      @endif
+
+      <span>{{ Auth::user()->name }} (Connecté)</span>
+
     </nav>
   </header>
 
   <main>
     <section class="hero">
         <div class="carousel">
-            <img src="{{ asset('images/img1.jpg') }}" alt="Plat africain 1" class="active">
-            <img src="{{ asset('images/img2.jpg') }}" alt="Plat africain 2">
-            <img src="{{ asset('images/img3.jpg') }}" alt="Plat africain 3">
+            <img src="{{ asset('images/attiekepoulet.jpg') }}" alt="Plat africain 1" >
+            <img src="{{ asset('images/gombo.jpg') }}" alt="Plat africain 2">
+            <img src="{{ asset('images/patatepoisson.jpg') }}" alt="Plat africain 3">
+            <img src="{{ asset('images/foutousauce.jpg') }}" alt="Plat africain 4">
+            <img src="{{ asset('images/allocopoulet.jpg') }}" alt="Plat africain 3">
         </div>
         <div class="hero-text">
-            <h2>Bienvenue chez Le Délicieux</h2>
+            <h2>Bienvenue chez NOL'K</h2>
             <p>Découvrez nos plats savoureux préparés avec amour et des ingrédients frais de saison.</p>
         </div>
     </section>
 
     <section class="menu-preview">
-      <article class="menu-item">
-        <h3>Foutou/riz sauce graine</h3>
-        <p>Foutou banane, riz nature accompagné de la bonne sauce graine.</p>
-        <span>2000fcfa</span>
-      </article>
 
-      <article class="menu-item">
-        <h3>Placali sauce kopè </h3>
-        <p>De la fabuleuse sauce kopè qui vous fera vivre l'inoubliable.</p>
-        <span>2000fcfa</span>
-      </article>
-
-      <article class="menu-item">
-        <h3>Filet du pêcheur</h3>
-        <p>Un cocktail des annimaux de mer accompagné de légumes sautés et sauce citronnée.</p>
-        <span>15000fcfa</span>
-      </article>
+      <div class="menu-grid">
+        @foreach($platsDuJour as $plat)
+          <article class="menu-item">
+            <h3>{{ $plat->name }}</h3>
+            <p>{{ $plat->description }}</p>
+            <span>{{ $plat->prix }} FCFA</span>
+            <form action="{{ route('commande-ajouter', $plat->id) }}" method="POST">
+              @csrf
+              <button type="submit">➕ Ajouter à la commande</button>
+            </form>
+          </article>
+        @endforeach
+      </div>
     </section>
+
+
   </main>
 
   <footer>

@@ -8,7 +8,8 @@
 <body>
     <div class="container">
         <h2>Créer un compte</h2>
-        <form action="" method="POST">
+
+        <form action="{{ route('inscription-B') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Nom</label>
@@ -23,6 +24,11 @@
             <div class="form-group">
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirmation">Confirmer le mot de passe</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
 
             <button type="submit">S'inscrire</button>

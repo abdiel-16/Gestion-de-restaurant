@@ -13,7 +13,7 @@
             <div class="error">{{ session('error') }}</div>
         @endif
 
-        <form action="" method="POST">
+        <form action="{{ route('connexion-B') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="login">Nom ou Email</label>

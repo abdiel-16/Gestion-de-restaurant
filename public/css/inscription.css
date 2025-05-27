@@ -1,5 +1,5 @@
 body {
-    background: #f4f4f4;
+    background: lab(96.93% -0.03 2.14 / 0.776);
     font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ input {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007B5E;
+    background-color: #9c8d07;
     border: none;
     color: white;
     border-radius: 5px;
@@ -53,5 +53,5 @@ button {
 }
 
 button:hover {
-    background-color: #005f49;
+    background-color: #d4b126;
 }

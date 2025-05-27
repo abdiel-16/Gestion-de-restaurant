@@ -43,7 +43,7 @@ input {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007B5E;
+    background-color: #9c8d07;
     border: none;
     color: white;
     border-radius: 5px;
@@ -53,7 +53,7 @@ button {
 }
 
 button:hover {
-    background-color: #005f49;
+    background-color: #d4b126;
 }
 
 .error {
